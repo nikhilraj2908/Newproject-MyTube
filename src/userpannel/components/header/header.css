@@ -1,0 +1,16 @@
+@media(max-width:768px){
+    .input-group input{
+        display: none;
+    }
+    .navicons span{
+        display: none;
+    }
+    .offinput input{
+        display: inline-block;
+    }
+}
+header{
+    z-index: 4;
+    /* position: sticky;
+    top: 0; */
+}

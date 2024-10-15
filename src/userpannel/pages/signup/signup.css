@@ -1,0 +1,13 @@
+.login-bg {
+    background: url("../../../assets/images/netflix.jpg"),rgba(0, 0,0, .6);
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: overlay; /* Optional: makes the gradient blend over the image */
+    height: 100vh; /* Ensure it covers the full height */
+}
+input:invalid +div{
+    color: red;
+}
+input:valid+div{
+ display: none;
+}
