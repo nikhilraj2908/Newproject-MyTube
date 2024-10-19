@@ -23,7 +23,13 @@ export function Adminsidebar({ selectedItem, setSelectedItem }) {
                 >
                     <span className="bi bi-person-fill fs-5 mx-3"> My Profile</span>
                 </h1>
+                <h1 className="list-heading p-3 d-flex  align-items-center my-3"
+                onClick={()=>handleItemClick("addvideo")}
+                style={getItemStyle("addvideo")}
+                >
+                                    <span className="bi bi-person-fill fs-5 mx-3"> Add  Video</span>
 
+                </h1>
                 <h1
                     className="list-heading p-3 d-flex align-items-center my-3"
                     onClick={() => handleItemClick("allusers")} // Set selectedItem to "allusers"

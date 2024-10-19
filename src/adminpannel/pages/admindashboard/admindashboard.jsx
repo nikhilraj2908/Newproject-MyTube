@@ -17,25 +17,31 @@ export function Admindashboard() {
             <div className="col-2 " >
                 <Adminsidebar selectedItem={selectedItem} setSelectedItem={setSelectedItem} />
             </div>
-            <div className="col-9">
-                {
-                    videos.map((video, index) => 
-                        <div>
-                            <span>
-                                <iframe src={ video.videoSrc}
-                                    width={90}
-                                    height={50}
-                                ></iframe>
-                            </span>
-                            <span>
-                                <div>{video.title}</div>
-                                <div>{video.discription}</div>
-                            </span>
-                            <span>{video.likecount}</span>
-                            {/* <span>{video.comments.length()}</span>   */}
-                        </div>
-                    )
-                }
+            <div className="col-9 ">
+                <table className="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>videos</th>
+                            <th>title/discription</th>
+                            <th>likes </th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {
+                            videos.map((video, index) =>
+                                <tr>
+                                    <td><iframe src={video.videoSrc}
+                                        width={150}
+                                        height={100}
+                                    ></iframe></td>
+                                    <td><div className="fw-bold">{video.title}</div><div>{video.discription}</div></td>
+                                    <td>{video.likecount}</td>
+                                </tr>
+                            )
+                        }
+                    </tbody>
+                </table>
             </div>
         </div>
     )
