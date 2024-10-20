@@ -5,6 +5,8 @@ import { Signupuser } from "./userpannel/pages/signup/signup"
 import { Cookies, useCookies } from "react-cookie"
 import { Loginadmin } from "./adminpannel/pages/loginadmin/loginadmin"
 import { Admindashboard } from "./adminpannel/pages/admindashboard/admindashboard"
+import { Myprofile } from "./adminpannel/pages/myprofile/myprofile"
+import { Addvideoadmin } from "./adminpannel/pages/addvideoadmin/addvideoadmin"
 export function Routing() {
   const [cookies, setcookie, removecookie] = useCookies(["userID"]);
     return (
@@ -13,7 +15,10 @@ export function Routing() {
                 <Header />
                 <Routes>
                     <Route path="/" element={cookies.userID ? <Dashboard /> : <Signupuser />} />
-                    <Route path="/loginadmin" element={cookies.mailID ? <Admindashboard /> : <Loginadmin />}/>
+                    <Route path="/loginadmin" element={cookies.mailID ? <Admindashboard /> : <Loginadmin />}>
+                        <Route path='myprofile' element={<Myprofile/>} /> 
+                        <Route path="addvideoadmin" element={<Addvideoadmin/>}/>
+                    </Route>
                 </Routes>
             </BrowserRouter>
         </>

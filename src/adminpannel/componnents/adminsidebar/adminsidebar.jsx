@@ -1,6 +1,9 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export function Adminsidebar({ selectedItem, setSelectedItem }) {
+
+    const navigate=useNavigate();
 
     function getItemStyle(item) {
         return item === selectedItem ? { backgroundColor: '#c70604', color: 'white' } : {};
@@ -8,10 +11,11 @@ export function Adminsidebar({ selectedItem, setSelectedItem }) {
 
     function handleItemClick(value) {
         setSelectedItem(value); // Update selectedItem with the clicked item
+        navigate(value);
     }
 
     return (
-        <div style={{borderRight:"1px solid gray "}} >
+        <div style={{ borderRight: "1px solid gray " }} >
             <div className="admitcard-container1">
                 <div>
                     {/* image  */}
@@ -24,10 +28,10 @@ export function Adminsidebar({ selectedItem, setSelectedItem }) {
                     <span className="bi bi-person-fill fs-5 mx-3"> My Profile</span>
                 </h1>
                 <h1 className="list-heading p-3 d-flex  align-items-center my-3"
-                onClick={()=>handleItemClick("addvideo")}
-                style={getItemStyle("addvideo")}
+                    onClick={() => handleItemClick("addvideoadmin")}
+                    style={getItemStyle("addvideoadmin")}
                 >
-                                    <span className="bi bi-person-fill fs-5 mx-3"> Add  Video</span>
+                    <span className="bi bi-person-fill fs-5 mx-3"> Add  Video</span>
 
                 </h1>
                 <h1
