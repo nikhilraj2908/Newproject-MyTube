@@ -1,19 +1,24 @@
 import { useState } from "react";
+import { useCookies } from "react-cookie";
 import { useNavigate } from "react-router-dom";
 
 export function Adminsidebar({ selectedItem, setSelectedItem }) {
 
+    const[cookie,setcookie,removecookie]=useCookies(["mailID"])
     const navigate=useNavigate();
 
     function getItemStyle(item) {
         return item === selectedItem ? { backgroundColor: '#c70604', color: 'white' } : {};
     }
-
+    
     function handleItemClick(value) {
         setSelectedItem(value); // Update selectedItem with the clicked item
         navigate(value);
     }
-
+function logoutclicked(){
+    removecookie("mailID");
+    navigate("/");
+}
     return (
         <div style={{ borderRight: "1px solid gray " }} >
             <div className="admitcard-container1">
@@ -60,10 +65,10 @@ export function Adminsidebar({ selectedItem, setSelectedItem }) {
 
                 <h1
                     className="list-heading p-3 d-flex align-items-center my-3"
-                    onClick={() => handleItemClick("logout")} // Set selectedItem to "logout"
+                    onClick={logoutclicked} // Set selectedItem to "logout"
                     style={getItemStyle("logout")}
                 >
-                    <span className="bi bi-people-fill fs-5 mx-3"> Log-out </span>
+                    <span className="bi bi-people-fill fs-5 mx-3" > Log-out </span>
                 </h1>
             </div>
         </div>
