@@ -133,7 +133,7 @@ export function Dashboard() {
                                         <div className="fw-bold">{video.title}</div>
                                         <div className="d-flex justify-content-between">
                                             <div className="pe-2" style={{ height: "50px", overflow: "auto", scrollbarWidth: "none", msOverflowStyle: "none" }}>
-                                                {video.discription}
+                                                {video.description}
                                             </div>
                                         </div>
                                     </span>

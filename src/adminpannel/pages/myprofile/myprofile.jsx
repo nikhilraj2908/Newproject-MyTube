@@ -26,23 +26,25 @@ export function Myprofile(){
                             <th>videos</th>
                             <th>title/discription</th>
                             <th>likes </th>
-                            <th></th>
+                            <th>operations</th>
                         </tr>
                     </thead>
                     <tbody>
                         {
                             videos.map((video, index) =>
-                                <tr>
-                                    <td><iframe src={video.videoSrc}
-                                        width={150}
-                                        height={100}
-                                    ></iframe></td>
-                                    <td><div className="fw-bold">{video.title}</div><div>{video.discription}</div></td>
+                                <tr key={index}>
+                                    <td>
+                                        <img src={video.thumbnail}></img>
+                                    </td>
+                                    <td><div className="fw-bold">{video.title}</div><div>{video.description}</div></td>
                                     <td>{video.likecount}</td>
-                                    <td className="btn-group">
+                                    <td >
+                                        <span className="btn-group ">
                                         <span onClick={()=>editvideoclick(video._id)} className="bi bi-pen  btn btn-warning"></span>
                                         <span onClick={()=>deletevideoclick(video._id)} className="bi bi-trash btn btn-danger"></span>
-                                    </td>
+                                   
+                                        </span>
+                                        </td>
                                 </tr>
                             )
                         }

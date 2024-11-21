@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 export function Adminsidebar({ selectedItem, setSelectedItem }) {
 
-    const[cookie,setcookie,removecookie]=useCookies(["mailID"])
+    const[cookie,setCookie,removeCookie]=useCookies(["mailID"])
     const navigate=useNavigate();
 
     function getItemStyle(item) {
@@ -16,7 +16,7 @@ export function Adminsidebar({ selectedItem, setSelectedItem }) {
         navigate(value);
     }
 function logoutclicked(){
-    removecookie("mailID");
+    removeCookie("mailID");
     navigate("/");
 }
     return (
